@@ -20,7 +20,7 @@ function Notes() {
   //fetch notes
   const fetchNotes = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/getNotes");
+      const response = await axios.get("https://notes-knbf.onrender.com/api/getNotes");
       setNotes(response.data.data); //array of notes
     }catch (error) {
       console.log("fetch error:", error);
@@ -47,7 +47,7 @@ function Notes() {
       if(editNoteId) {
       //update
       await axios.put(
-        `http://localhost:8000/api/updateNote/${editNoteId}`,
+        `https://notes-knbf.onrender.com/api/updateNote/${editNoteId}`,
         {title,message,category}
       );
       alert("Note updated");
@@ -55,7 +55,7 @@ function Notes() {
     }else{
 
     //add 
-    await axios.post("http://localhost:8000/api/createNote",{
+    await axios.post("https://notes-knbf.onrender.com/api/createNote",{
     title,
     message,
     category
@@ -83,7 +83,7 @@ function Notes() {
 
   const handleDelete = async (id) => {
     try{
-      await axios.delete(`http://localhost:8000/api/deleteNote/${id}`);
+      await axios.delete(`https://notes-knbf.onrender.com/api/deleteNote/${id}`);
       fetchNotes();
       alert("Note deleted");
     } catch (error) {
