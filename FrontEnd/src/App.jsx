@@ -1,6 +1,5 @@
 import React from 'react'
-import Notes from '../pages/notes'
-import Notess from '../pages/Notess'
+import Notess from './pages/Notess'
 
 
 const App = () => {
